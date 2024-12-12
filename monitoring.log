@@ -1,0 +1,111 @@
+2024-12-12 16:34:47,262 - INFO - Инициализация браузера...
+2024-12-12 16:34:47,263 - INFO - ====== WebDriver manager ======
+2024-12-12 16:34:52,253 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-12 16:34:52,442 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-12 16:34:52,566 - INFO - Driver [C:\Users\nikita\.wdm\drivers\chromedriver\win64\131.0.6778.108\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-12 16:34:55,044 - INFO - Начинаем мониторинг...
+2024-12-12 16:34:59,671 - INFO - Новый элемент: Тип=medium, Значение=4.98x, Время=2024-12-12 16:34:59
+2024-12-12 16:34:59,671 - INFO - Данные записаны: Тип=medium, Значение=4.98x, Время=2024-12-12 16:34:59
+2024-12-12 16:35:10,459 - INFO - Новый элемент: Тип=medium, Значение=2.65x, Время=2024-12-12 16:35:10
+2024-12-12 16:35:10,460 - INFO - Данные записаны: Тип=medium, Значение=2.65x, Время=2024-12-12 16:35:10
+2024-12-12 16:35:36,612 - INFO - Новый элемент: Тип=medium, Значение=3.33x, Время=2024-12-12 16:35:36
+2024-12-12 16:35:36,612 - INFO - Данные записаны: Тип=medium, Значение=3.33x, Время=2024-12-12 16:35:36
+2024-12-12 16:35:44,560 - INFO - Мониторинг остановлен пользователем.
+2024-12-12 16:35:44,575 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None)': /session/6ac982fd3908f337fc40ffb3cb18fbdb
+2024-12-12 16:35:48,897 - INFO - Инициализация браузера...
+2024-12-12 16:35:48,897 - INFO - ====== WebDriver manager ======
+2024-12-12 16:35:54,644 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-12 16:35:54,829 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-12 16:35:54,944 - INFO - Driver [C:\Users\nikita\.wdm\drivers\chromedriver\win64\131.0.6778.108\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-12 16:35:56,798 - INFO - Начинаем мониторинг...
+2024-12-12 16:36:02,146 - INFO - Новый элемент: Тип=low, Значение=1.97x, Время=2024-12-12 16:36:02
+2024-12-12 16:36:02,147 - INFO - Данные записаны: Тип=low, Значение=1.97x, Время=2024-12-12 16:36:02
+2024-12-12 16:36:08,651 - INFO - Новый элемент: Тип=low, Значение=1.18x, Время=2024-12-12 16:36:08
+2024-12-12 16:36:08,651 - INFO - Данные записаны: Тип=low, Значение=1.18x, Время=2024-12-12 16:36:08
+2024-12-12 16:36:27,605 - INFO - Новый элемент: Тип=medium, Значение=2.22x, Время=2024-12-12 16:36:27
+2024-12-12 16:36:27,606 - INFO - Данные записаны: Тип=medium, Значение=2.22x, Время=2024-12-12 16:36:27
+2024-12-12 16:37:32,001 - INFO - Новый элемент: Тип=high, Значение=98.85x, Время=2024-12-12 16:37:32
+2024-12-12 16:37:32,001 - INFO - Данные записаны: Тип=high, Значение=98.85x, Время=2024-12-12 16:37:32
+2024-12-12 16:37:51,080 - INFO - Новый элемент: Тип=low, Значение=1.90x, Время=2024-12-12 16:37:51
+2024-12-12 16:37:51,080 - INFO - Данные записаны: Тип=low, Значение=1.90x, Время=2024-12-12 16:37:51
+2024-12-12 16:38:12,616 - INFO - Новый элемент: Тип=medium, Значение=2.85x, Время=2024-12-12 16:38:12
+2024-12-12 16:38:12,616 - INFO - Данные записаны: Тип=medium, Значение=2.85x, Время=2024-12-12 16:38:12
+2024-12-12 16:39:01,141 - INFO - Новый элемент: Тип=high, Значение=25.25x, Время=2024-12-12 16:39:01
+2024-12-12 16:39:01,141 - INFO - Данные записаны: Тип=high, Значение=25.25x, Время=2024-12-12 16:39:01
+2024-12-12 16:39:04,465 - INFO - Мониторинг остановлен пользователем.
+2024-12-12 16:39:04,470 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None)': /session/910f3a53377db6ea85853abb703458a2
+2024-12-12 16:39:18,564 - INFO - Открыт URL: https://example.com
+2024-12-12 16:39:28,844 - ERROR - iframe не был найден в течение времени ожидания.
+2024-12-12 16:39:33,059 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003C01A90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/9753e08433a03226d458d1d088e0dded
+2024-12-12 16:39:35,102 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003C01BD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/9753e08433a03226d458d1d088e0dded
+2024-12-12 16:39:37,130 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003BD09D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/9753e08433a03226d458d1d088e0dded
+2024-12-12 16:39:41,224 - INFO - Драйвер завершил работу.
+2024-12-12 16:40:02,578 - INFO - Инициализация браузера...
+2024-12-12 16:40:02,578 - INFO - ====== WebDriver manager ======
+2024-12-12 16:40:06,405 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-12 16:40:06,508 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-12 16:40:06,671 - INFO - Driver [C:\Users\nikita\.wdm\drivers\chromedriver\win64\131.0.6778.108\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-12 16:40:07,946 - INFO - Начинаем мониторинг...
+2024-12-12 16:40:15,750 - WARNING - Ошибка при мониторинге: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id^='history-item-']"}
+  (Session info: chrome=131.0.6778.139); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x011634A3+25059]
+	(No symbol) [0x010ECEA4]
+	(No symbol) [0x00FCBEC3]
+	(No symbol) [0x0100FD86]
+	(No symbol) [0x0100FFCB]
+	(No symbol) [0x01005B01]
+	(No symbol) [0x01031F44]
+	(No symbol) [0x01005A24]
+	(No symbol) [0x01032194]
+	(No symbol) [0x0104B51E]
+	(No symbol) [0x01031C96]
+	(No symbol) [0x01003FAC]
+	(No symbol) [0x01004F3D]
+	GetHandleVerifier [0x01455613+3113811]
+	GetHandleVerifier [0x0146A2DA+3199002]
+	GetHandleVerifier [0x01462AB2+3168242]
+	GetHandleVerifier [0x01203310+680016]
+	(No symbol) [0x010F57ED]
+	(No symbol) [0x010F2A98]
+	(No symbol) [0x010F2C35]
+	(No symbol) [0x010E5890]
+	BaseThreadInitThunk [0x75BC7BA9+25]
+	RtlInitializeExceptionChain [0x7709C0CB+107]
+	RtlClearBits [0x7709C04F+191]
+
+2024-12-12 16:40:50,926 - WARNING - Ошибка при мониторинге: Message: 
+Stacktrace:
+	GetHandleVerifier [0x011634A3+25059]
+	(No symbol) [0x010ECEA4]
+	(No symbol) [0x00FCBEC3]
+	(No symbol) [0x0100FD86]
+	(No symbol) [0x0100FFCB]
+	(No symbol) [0x0104D952]
+	(No symbol) [0x01031F44]
+	(No symbol) [0x0104B51E]
+	(No symbol) [0x01031C96]
+	(No symbol) [0x01003FAC]
+	(No symbol) [0x01004F3D]
+	GetHandleVerifier [0x01455613+3113811]
+	GetHandleVerifier [0x0146A2DA+3199002]
+	GetHandleVerifier [0x01462AB2+3168242]
+	GetHandleVerifier [0x01203310+680016]
+	(No symbol) [0x010F57ED]
+	(No symbol) [0x010F2A98]
+	(No symbol) [0x010F2C35]
+	(No symbol) [0x010E5890]
+	BaseThreadInitThunk [0x75BC7BA9+25]
+	RtlInitializeExceptionChain [0x7709C0CB+107]
+	RtlClearBits [0x7709C04F+191]
+
+2024-12-12 16:40:57,153 - INFO - Мониторинг остановлен пользователем.
+2024-12-12 16:40:57,172 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None)': /session/9d5415b116acc9fa88161baca7eece32
+2024-12-12 16:40:59,227 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000000047439D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/9d5415b116acc9fa88161baca7eece32
+2024-12-12 16:41:01,270 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000004742C10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/9d5415b116acc9fa88161baca7eece32
+2024-12-12 16:41:59,552 - INFO - Открыт URL: https://example.com
+2024-12-12 16:42:09,859 - ERROR - iframe не был найден в течение времени ожидания.
+2024-12-12 16:42:15,634 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003BC1A90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/dc3c70926568e1d7f0b162ce13005794
+2024-12-12 16:42:17,664 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003BC1BD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/dc3c70926568e1d7f0b162ce13005794
+2024-12-12 16:42:19,720 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003B909D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/dc3c70926568e1d7f0b162ce13005794
+2024-12-12 16:42:23,812 - INFO - Драйвер завершил работу.
