@@ -2,8 +2,6 @@ name: Run Selenium Monitor
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "50 */5 * * *"
 
 jobs:
   selenium:
@@ -28,22 +26,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gh
 
-      - name: Authenticate GitHub CLI
+      - name: Run Selenium script and Restart Timer
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh auth setup-git
-          gh auth status
+          echo "Запуск Python-скрипта и таймера для перезагрузки..."
 
-      - name: Run Selenium script
-        run: |
-          python lucky_parc.py
+          # Запускаем Python-скрипт в фоновом режиме
+          python lucky_parc.py &
+          SCRIPT_PID=$!
 
-      - name: Restart after 5h50m
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Ожидание 5 часов и 50 минут для перезапуска..."
+          # Запускаем таймер на 5 часов 50 минут
           sleep $((5*3600 + 50*60))
-          echo "Перезапуск Workflow"
+
+          # После завершения таймера убиваем процесс Python-скрипта
+          echo "Таймер завершён. Завершаем Python-скрипт..."
+          kill $SCRIPT_PID || echo "Скрипт уже завершён."
+
+          # Перезапускаем Workflow
+          echo "Перезапуск Workflow..."
           gh workflow run "Run Selenium Monitor"
+
+          # Завершаем текущий процесс
+          echo "Workflow завершён."
