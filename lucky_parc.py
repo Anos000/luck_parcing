@@ -46,14 +46,25 @@ def save_data_to_csv(item_type, item_value, msk_time):
 # Функция для проверки и обработки iframe
 def switch_to_game_iframe(driver):
     try:
-        iframe = WebDriverWait(driver, 30).until(
+        # Ожидание загрузки iframe
+        iframe = WebDriverWait(driver, 60).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "iframe[src*='1play.gamedev-tech.cc/lucky/onewin']"))
         )
         driver.switch_to.frame(iframe)
         print("Переключились на iframe.")
     except Exception as e:
         print(f"Ошибка переключения на iframe: {e}")
-        raise
+        print("Попытка выполнить переключение с помощью JavaScript...")
+        try:
+            iframe = driver.execute_script("return document.querySelector(\"iframe[src*='1play.gamedev-tech.cc/lucky/onewin']\")")
+            if iframe:
+                driver.switch_to.frame(iframe)
+                print("Переключение через JavaScript выполнено успешно.")
+            else:
+                raise Exception("Iframe не найден даже через JavaScript.")
+        except Exception as js_e:
+            print(f"Не удалось переключиться на iframe: {js_e}")
+            raise
 
 # Функция для мониторинга элементов в контейнере #history
 def monitor_history(driver):
