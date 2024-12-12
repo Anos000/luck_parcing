@@ -18,34 +18,33 @@ jobs:
 
       - name: Install dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
           python -m pip install --upgrade pip
           pip install selenium webdriver-manager
 
       - name: Install GitHub CLI
         run: |
-          sudo apt-get update
           sudo apt-get install -y gh
 
       - name: Run Selenium script and Restart Timer
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Запуск Python-скрипта и таймера для перезагрузки..."
+          echo "Запуск виртуального дисплея..."
+          Xvfb :99 -screen 0 1920x1080x16 & export DISPLAY=:99
 
-          # Запускаем Python-скрипт в фоновом режиме
+          echo "Запуск Python-скрипта и таймера для перезагрузки..."
           python lucky_parc.py &
           SCRIPT_PID=$!
 
           # Запускаем таймер на 5 часов 50 минут
           sleep $((5*3600 + 50*60))
 
-          # После завершения таймера убиваем процесс Python-скрипта
           echo "Таймер завершён. Завершаем Python-скрипт..."
           kill $SCRIPT_PID || echo "Скрипт уже завершён."
 
-          # Перезапускаем Workflow
           echo "Перезапуск Workflow..."
           gh workflow run "Run Selenium Monitor"
 
-          # Завершаем текущий процесс
           echo "Workflow завершён."
