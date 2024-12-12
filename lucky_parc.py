@@ -10,11 +10,14 @@ from datetime import datetime, timezone, timedelta
 
 # Настройка Selenium
 options = webdriver.ChromeOptions()
+options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--headless')  # Добавлен headless режим
-options.add_argument('--disable-gpu')  # Оптимизация для headless режима
-options.add_argument('--window-size=1920,1080')  # Устанавливаем размер окна для headless
+options.add_argument('--disable-gpu')
+options.add_argument('--window-size=1920,1080')
+
+# Используем webdriver-manager для автоматической настройки драйвера
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 url = "https://1wzjvm.top/casino/play/1play_1play_luckyjet"
 
