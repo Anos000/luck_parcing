@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 from datetime import datetime, timezone, timedelta
+import traceback  # Add traceback import
 
 # Настройка Selenium
 options = webdriver.ChromeOptions()
@@ -15,11 +16,6 @@ options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--disable-gpu')
 options.add_argument('--window-size=1920,1080')
-
-# Используем webdriver-manager для автоматической настройки драйвера
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
-url = "https://1wzjvm.top/casino/play/1play_1play_luckyjet"
 
 # Функция для инициализации браузера
 def initialize_browser():
@@ -96,6 +92,7 @@ def monitor_history(driver):
 
 # Основной код
 try:
+    url = "https://1wzjvm.top/casino/play/1play_1play_luckyjet"
     # Открываем файл для записи заголовков, если файл пуст
     with open("history_data.csv", mode="w", newline="") as file:
         writer = csv.writer(file)
@@ -105,5 +102,8 @@ try:
     monitor_history(driver)
 except KeyboardInterrupt:
     print("Мониторинг остановлен пользователем.")
+except Exception as e:
+    print(f"Ошибка при работе Selenium: {e}")
+    print(f"Stacktrace: {traceback.format_exc()}")
 finally:
     driver.quit()

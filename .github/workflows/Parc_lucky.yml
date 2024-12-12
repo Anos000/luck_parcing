@@ -22,7 +22,7 @@ jobs:
           sudo apt-get install -y xvfb
           sudo apt-get install -y google-chrome-stable
           python -m pip install --upgrade pip
-          pip install selenium webdriver-manager
+          pip install selenium webdriver-manager traceback
 
       - name: Install GitHub CLI
         run: |
@@ -34,6 +34,9 @@ jobs:
         run: |
           echo "Запуск виртуального дисплея..."
           Xvfb :99 -screen 0 1920x1080x16 & export DISPLAY=:99
+
+          echo "Проверка доступности сайта..."
+          python -c "import requests; requests.get('https://1wzjvm.top/casino/play/1play_1play_luckyjet', timeout=10)"
 
           echo "Запуск Python-скрипта и таймера для перезагрузки..."
           python lucky_parc.py &
