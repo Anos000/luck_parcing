@@ -1,0 +1,49 @@
+name: Run Selenium Monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "50 */5 * * *"
+
+jobs:
+  selenium:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium webdriver-manager
+
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
+
+      - name: Authenticate GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh auth setup-git
+          gh auth status
+
+      - name: Run Selenium script
+        run: |
+          python lucky_parc.py
+
+      - name: Restart after 5h50m
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Ожидание 5 часов и 50 минут для перезапуска..."
+          sleep $((5*3600 + 50*60))
+          echo "Перезапуск Workflow"
+          gh workflow run "Run Selenium Monitor"
