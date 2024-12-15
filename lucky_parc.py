@@ -52,8 +52,9 @@ def monitor_history(driver):
         while True:
             try:
                 # Переключаемся на iframe
-                iframe = WebDriverWait(driver, 30).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, "iframe[src*='1play.gamedev-tech.cc/lucky/onewin']"))
+                iframe = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located(
+                        (By.CSS_SELECTOR, "iframe[src*='1play.gamedev-tech.cc/lucky/onewin']"))
                 )
                 driver.switch_to.frame(iframe)
 
