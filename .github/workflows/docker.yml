@@ -1,23 +1,49 @@
-name: Docker Build and Push
+name: Run My Parser and Restart Every 5h50m
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # Запуск вручную
 
 jobs:
-  build-and-push:
+  run-parser:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Шаг 1: Проверка репозитория
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Log in to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      # Шаг 2: Установка Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
 
-    - name: Build Docker image
-      run: docker build -t anos0/my-parser:latest .
+      # Шаг 3: Установка зависимостей
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          ./.venv/bin/pip install -r requirements.txt
 
-    - name: Push Docker image to Docker Hub
-      run: docker push anos0/my-parser:latest
+      # Шаг 4: Запуск парсера и таймера в фоновом режиме
+      - name: Run parser and start timer
+        run: |
+          # Запуск парсера в фоновом режиме
+          echo "Starting the parser..."
+          ./.venv/bin/python lucky_parc.py &
+
+          # Запуск таймера (ждем 5 часов 50 минут)
+          sleep 21000 &
+
+          # Ожидание завершения
+          wait
+
+      # Шаг 5: Перезапуск workflow через API
+      - name: Restart the workflow after 5h 50m
+        run: |
+          echo "Restarting the workflow after 5h 50m..."
+
+          # Перезапуск workflow с помощью GitHub API
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/main.yml/dispatches \
+            -d '{"ref":"main"}'

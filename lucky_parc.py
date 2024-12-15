@@ -8,22 +8,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 from datetime import datetime, timezone, timedelta
 import os  # Для проверки существования файла
-
+from selenium.webdriver.chrome.options import Options
 # Настройка Selenium
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--disable-gpu')
-options.add_argument('--window-size=1920,1080')
-
-url = "https://1wzjvm.top/casino/play/1play_1play_luckyjet"
-
-# Функция для инициализации браузера
 def initialize_browser():
-    print("Инициализация браузера...")
+    options = Options()
+    options.add_argument('--headless')  # Run headlessly (optional)
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.binary_location = "/usr/bin/google-chrome-stable"  # Ensure this points to the installed Chrome binary
+
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    driver.get(url)
     return driver
 
 # Функция для получения текущего времени по МСК
