@@ -23,6 +23,11 @@ jobs:
           python -m venv .venv
           ./.venv/bin/pip install -r requirements.txt
 
+      - name: Проверка версии Chrome и ChromeDriver
+        run: |
+          google-chrome-stable --version
+          chromedriver --version
+
       # Шаг 4: Запуск парсера и таймера в фоновом режиме
       - name: Run parser and start timer
         run: |

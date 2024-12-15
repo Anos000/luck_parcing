@@ -9,15 +9,25 @@ import time
 from datetime import datetime, timezone, timedelta
 import os  # Для проверки существования файла
 from selenium.webdriver.chrome.options import Options
-# Настройка Selenium
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger()
+
+
 def initialize_browser():
+    logger.debug("Initializing browser...")
     options = Options()
-    options.add_argument('--headless')  # Run headlessly (optional)
+    options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    options.binary_location = "/usr/bin/google-chrome-stable"  # Ensure this points to the installed Chrome binary
 
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    try:
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        logger.debug("Browser initialized successfully.")
+    except Exception as e:
+        logger.error(f"Error initializing browser: {e}")
+        raise
     return driver
 
 # Функция для получения текущего времени по МСК
